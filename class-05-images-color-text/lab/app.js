@@ -45,7 +45,7 @@ function multiply(num1, num2) { //eslint-disable-line
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+// testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -61,12 +61,27 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
+function sumAndMultiply(num1, num2, num3) { //eslint-disable-line
+  var addNumbers = sum(num1, num2)[0]; //this gets the sum() which adds num1 + num2 (this is 4+7) then gets the total
+  var additionTotal = sum(addNumbers, num3)[0]; //this gets the total from above and adds 5
+  var array = []; //empty array
+  array.push(additionTotal); //this array should now hold the number 16, it's skipping over the middle argument
 
+  var multiplyNumbers = multiply(num1, num2)[0]; //this gets the multiply() which multiplies num1 + num2 (this is 4*7)
+  var multiplyTotal = multiply(multiplyNumbers, num3)[0]; //this uses total from multiply() and adds a 3rd parameter (should be 28*5)
+  array.push(multiplyTotal); //this array should now hold the number 140, it's skipping over the middle argument
+
+  var stringOne = num1 + ' and ' + num2 + ' and ' + num3 + ' sum to ' + additionTotal+ '.';
+  array.push(stringOne);
+
+  var stringTwo = 'The product of ' + num1 + ' and ' + num2 + ' and ' + num3 + ' is ' + multiplyTotal + '.';
+  array.push(stringTwo);
+
+  return array;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -83,7 +98,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(_sumArr) { //eslint-disable-line
 
 }
 
@@ -104,7 +119,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
+function multiplyArray(_multArr) { //eslint-disable-line
 
 }
 
@@ -132,7 +147,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+function multiplyAnyArray(_dynamicArray) { //eslint-disable-line
 
 }
 
