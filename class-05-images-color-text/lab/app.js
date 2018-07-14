@@ -62,10 +62,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(num1, num2, num3) { //eslint-disable-line
-  var addNumbers = sum(num1, num2)[0]; //this gets the sum() which adds num1 + num2 (this is 4+7) then gets the total
-  var additionTotal = sum(addNumbers, num3)[0]; //this gets the total from above and adds 5
-  var array = []; //empty array
-  array.push(additionTotal); //this array should now hold the number 16, it's skipping over the middle argument
+  var addNumbers = sum(num1, num2)[0];
+  var additionTotal = sum(addNumbers, num3)[0];
+  var array = [];
+  array.push(additionTotal);
 
   var multiplyNumbers = multiply(num1, num2)[0]; //this gets the multiply() which multiplies num1 + num2 (this is 4*7)
   var multiplyTotal = multiply(multiplyNumbers, num3)[0]; //this uses total from multiply() and adds a 3rd parameter (should be 28*5)
@@ -111,7 +111,7 @@ function sumArray([num1, num2, num3]) { //eslint-disable-line
 }
 
 // Here is the test for sumArray(); uncomment it to run it
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -126,12 +126,23 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(_multArr) { //eslint-disable-line
 
+var testArray = [2,3,4];
+
+function multiplyArray([num1, num2, num3]) { //eslint-disable-line
+  var addNumbers = multiply(num1, num2)[0];
+  var arrayTotal = multiply(addNumbers, num3)[0];
+  var array = [];
+  array.push(arrayTotal);
+
+  var message = 'The numbers ' + num1 + ',' + num2 + ',' + num3 + ' have a product of ' + arrayTotal + '.';
+  array.push(message);
+
+  return(array);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
